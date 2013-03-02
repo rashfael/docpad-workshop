@@ -17,5 +17,5 @@ results
 *~
 
 node-modules/
-
+out/
 npm-debug.log

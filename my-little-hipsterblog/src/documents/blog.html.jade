@@ -1,0 +1,15 @@
+---
+layout: 'default'
+title: 'Blog Posts'
+---
+
+nav(typeof='dc:collection')
+	for post in getCollection('html').findAll({relativeOutDirPath: 'posts'}).sortCollection({date: -1}).toJSON()
+		.row
+			a.post-title(href='/'+post.relativeOutPath)
+				h3= post.title
+				if post.subtitle
+					h4= post.subtitle
+			if post.excerpt
+				p.justify= post.excerpt
+		hr

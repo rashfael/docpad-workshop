@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+
+h1 #{document.title}
+h2 #{document.subtitle}
+//- Content
+!= content
+
+		//- Gallery
+		//- if document.gallery
+		//- 	ul.thumbnails.gallery
+		//- 		for image in document.gallery
+		//- 			- var full = '/'+document.relativeDirPath+'/'+image.url
+		//- 			- var thumb = '/'+document.relativeDirPath+'/thumbs/'+image.url
+		//- 			li.span3: a.thumbnail(href=full, title=image.title): img(src=thumb)
+	//- .span3
+	//- 	table.table.table-condensed
+	//- 		thead
+	//- 			tr
+	//- 				th(colspan='2')
+	//- 					if document.image
+	//- 						img(src='/'+document.relativeDirPath+'/thumbs/'+document.image,width=300)
+	//- 					else
+	//- 						img(src='/img/300x180.gif')
+	//- 		//- Date
+	//- 		tr
+	//- 			th Datum
+	//- 			td 
+	//- 				!= moment(document.date).format('DD.MM.YYYY, hh:mm')
+	//- 		//- Author
+	//- 		tr
+	//- 			th Autor
+	//- 			td
+	//- 				!= document.author
+	//- 		//- Tags
+	//- 		tr
+	//- 			th Tags
+	//- 			td
+	//- 				- var firstTag = true
+	//- 				for tag in document.tags
+	//- 					- if (firstTag === true)
+	//- 						!= tag
+	//- 						- firstTag = false
+	//- 					- else
+	//- 						!= ',' + tag
+	//- 		tr
+	//- 			th Teilen
+	//- 			td
+hr
+h3 Like my shit!
+a.twitter-share-button(href="https://twitter.com/share") Tweet
+.g-plusone(data-size="medium")
+.fb-like(data-send="false", data-layout="button_count", data-width="150px", data-show-faces="false")

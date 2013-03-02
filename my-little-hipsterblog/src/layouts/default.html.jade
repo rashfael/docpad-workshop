@@ -1,0 +1,39 @@
+!!! 5
+html(lang='de')
+	head
+		block head
+			meta(charset='utf-8')
+			title=document.title + ' · my little hipster blog'
+			link(href='/img/favicon.ico', rel='icon', type='image/x-icon')
+			//- link(href='/posts/index.rss', rel='alternate', type='application/rss+xml', title='My Little Hipster Blog')
+			link(href='/css/bootstrap.min.css', rel='stylesheet')
+			link(href='/css/style.css', rel='stylesheet')
+			//- link(href='/css/colorbox.css', rel='stylesheet')
+			//- script(src='/js/jquery-1.8.1.min.js')
+			script(src='/js/bootstrap.min.js')
+			//- script(src='/js/jquery.colorbox-min.js')
+			//- script(src='/js/script.js')
+	body
+		.navbar.navbar-fixed-top
+			.navbar-inner
+				.container
+					a(href='/').brand My Little Hipster Blog
+					ul.nav
+						li: a(href='/blog.html') Blog
+						li: a(href='/about.html') About
+		.container
+			if document.headImg
+				img.head-img(src=document.headImg)
+			!= content
+			footer
+				p 
+					&copy; internet ·&nbsp;
+					a(href='/impressum.html') Impressum
+		script
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		#fb-root
+		script
+			(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+
+		script
+			(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src = 'https://apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();
